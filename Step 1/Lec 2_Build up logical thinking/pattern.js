@@ -396,10 +396,13 @@ function pattern22(size) {
 
   for (let i = 0; i < 2 * size - 1; i++) {
     for (let j = 0; j < 2 * size - 1; j++) {
+      // distance to
       const top = i;
       const left = j;
       const bottom = 2 * size - 2 - i;
       const right = 2 * size - 2 - j;
+
+      // num = size - min of all distance
       const num = size - Math.min(Math.min(top, bottom), Math.min(left, right));
 
       process.stdout.write(num.toString());
