@@ -32,6 +32,16 @@ function printNto1(n) {
   printNto1(n - 1);
 }
 
+function sum1ToN(n) {
+  if (n === 0) return 0;
+  return n + sum1ToN(n - 1);
+}
+
+function factorial(n) {
+  if (n === 0) return 1;
+  return n * factorial(n - 1);
+}
+
 function main() {
   const n = 5;
   console.log("- Problems on Recursion -\n");
@@ -46,6 +56,14 @@ function main() {
 
   console.log("Print n to 1");
   printNto1(n);
+  console.log("\n");
+
+  console.log("Sum 1 to N");
+  console.log(sum1ToN(n));
+  console.log("\n");
+
+  console.log("Factorial N");
+  console.log(factorial(n));
   console.log("\n");
 }
 
