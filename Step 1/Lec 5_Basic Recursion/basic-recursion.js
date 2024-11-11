@@ -42,6 +42,36 @@ function factorial(n) {
   return n * factorial(n - 1);
 }
 
+/**
+ * Iterative
+ */
+// function reverseArray(arr, n) {
+//   const result = [];
+//   for (let i = n - 1; i >= 0; i--) {
+//     result[n - i - 1] = arr[i];
+//   }
+//   return result;
+// }
+
+/**
+ * Recursive two pointer
+ */
+// function reverseArray(arr, n) {
+//   reverse(arr, 0, n - 1);
+//   return arr;
+// }
+
+// function reverse(arr, l, r) {
+//   if (l < r) {
+//     // swap
+//     let temp = arr[l];
+//     arr[l] = arr[r];
+//     arr[r] = temp;
+
+//     reverse(arr, l + 1, r - 1);
+//   }
+// }
+
 function main() {
   const n = 5;
   console.log("- Problems on Recursion -\n");
@@ -64,6 +94,10 @@ function main() {
 
   console.log("Factorial N");
   console.log(factorial(n));
+  console.log("\n");
+
+  console.log("Reverse Array");
+  console.log(reverseArray([1, 2, 3, 4, 5], 5));
   console.log("\n");
 }
 

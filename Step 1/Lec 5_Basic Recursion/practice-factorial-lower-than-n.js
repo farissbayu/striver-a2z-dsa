@@ -14,8 +14,18 @@ function factorial(n) {
 
 // Recursive factorial
 function recursiveFactorial(n) {
-  if (n === 1) return 1;
-  return n * recursiveFactorial(n - 1);
+  const result = findFactorial(1, n, 1, []);
+  return result;
 }
 
-console.log(factorial(3));
+function findFactorial(fac, n, i, arr) {
+  if (fac > n) {
+    return arr;
+  } else {
+    arr.push(fac);
+    return findFactorial(fac * (i + 1), n, i + 1, arr);
+  }
+}
+
+console.log(factorial(6));
+console.log(recursiveFactorial(6));
