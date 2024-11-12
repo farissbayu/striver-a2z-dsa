@@ -42,35 +42,29 @@ function factorial(n) {
   return n * factorial(n - 1);
 }
 
-/**
- * Iterative
- */
-// function reverseArray(arr, n) {
-//   const result = [];
-//   for (let i = n - 1; i >= 0; i--) {
-//     result[n - i - 1] = arr[i];
-//   }
-//   return result;
-// }
+function reverseArray(i, arr, n) {
+  if (i < n / 2) {
+    // swap
+    const temp = arr[i];
+    arr[i] = arr[n - i - 1];
+    arr[n - i - 1] = temp;
 
-/**
- * Recursive two pointer
- */
-// function reverseArray(arr, n) {
-//   reverse(arr, 0, n - 1);
-//   return arr;
-// }
+    reverseArray(i + 1, arr, n);
+  }
+  return arr;
+}
 
-// function reverse(arr, l, r) {
-//   if (l < r) {
-//     // swap
-//     let temp = arr[l];
-//     arr[l] = arr[r];
-//     arr[r] = temp;
+function palindrome(i, s) {
+  if (i >= s.length / 2) return true; // string is palindrome
+  if (s[i] != s[s.length - i - 1]) return false; // string is not palindrome
+  return palindrome(i + 1, s);
+}
 
-//     reverse(arr, l + 1, r - 1);
-//   }
-// }
+function fibonacci(n) {
+  if (n === 0) return 0;
+  if (n === 1) return 1;
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
 
 function main() {
   const n = 5;
@@ -97,7 +91,15 @@ function main() {
   console.log("\n");
 
   console.log("Reverse Array");
-  console.log(reverseArray([1, 2, 3, 4, 5], 5));
+  console.log(reverseArray(0, [1, 2, 3, 4, 5], 5));
+  console.log("\n");
+
+  console.log("Palindrome String");
+  console.log(palindrome(0, "121"));
+  console.log("\n");
+
+  console.log("Fibonacci n");
+  console.log(fibonacci(n));
   console.log("\n");
 }
 
