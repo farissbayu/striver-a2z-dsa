@@ -76,6 +76,18 @@ function recursiveBubbleSort(arr, start, end) {
   return arr;
 }
 
+function recursiveInsertionSort(arr, i, n) {
+  if (i > n) return arr;
+
+  let j = i;
+  while (j > 0 && arr[j - 1] > arr[j]) {
+    [arr[j - 1], arr[j]] = [arr[j], arr[j - 1]];
+    j--;
+  }
+
+  return recursiveInsertionSort(arr, i + 1, n);
+}
+
 function main() {
   console.log("- Sorting II -");
 
@@ -88,6 +100,11 @@ function main() {
   console.log(recursiveBubbleSort([4, 1, 3, 9, 7], 0, 4));
   console.log(recursiveBubbleSort([10, 9, 8, 7, 6, 5, 4, 3, 2, 1], 0, 9));
   console.log(recursiveBubbleSort([1, 3, 2], 0, 2));
+
+  console.log("Recursive insertion sort | O(N^2)");
+  console.log(recursiveInsertionSort([4, 1, 3, 9, 7], 0, 4));
+  console.log(recursiveInsertionSort([10, 9, 8, 7, 6, 5, 4, 3, 2, 1], 0, 9));
+  console.log(recursiveInsertionSort([1, 3, 2], 0, 2));
 }
 
 main();
