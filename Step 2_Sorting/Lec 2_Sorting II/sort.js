@@ -76,6 +76,9 @@ function recursiveBubbleSort(arr, start, end) {
   return arr;
 }
 
+/**
+ *
+ */
 function recursiveInsertionSort(arr, i, n) {
   if (i > n) return arr;
 
@@ -86,6 +89,47 @@ function recursiveInsertionSort(arr, i, n) {
   }
 
   return recursiveInsertionSort(arr, i + 1, n);
+}
+
+function quickSort(arr, low, high) {
+  // make sure subarray size in more than 1
+  if (low < high) {
+    let pIndex = partition(arr, low, high); // find index that pivot should be
+    quickSort(arr, low, pIndex - 1); // do quick sort for left sub array
+    quickSort(arr, pIndex + 1, high); // do quick sort for right sub array
+  }
+
+  return arr;
+}
+
+function partition(arr, low, high) {
+  /**
+   * pivot for divide array into left and right
+   * left should be less or same with pivot
+   * right should be more than pivot
+   */
+  const pivot = arr[low];
+  let i = low; // left pointer
+  let j = high; // right pointer
+
+  // do looping until j cross i
+  while (i < j) {
+    while (arr[i] <= pivot && i <= high - 1) {
+      i++;
+    }
+
+    while (arr[j] > pivot && j >= low + 1) {
+      j--;
+    }
+
+    if (i < j) {
+      [arr[i], arr[j]] = [arr[i], arr[j]];
+    }
+  }
+
+  // put pivot in the correct place
+  [arr[low], arr[j]] = [arr[j], arr[low]];
+  return j;
 }
 
 function main() {
@@ -105,6 +149,11 @@ function main() {
   console.log(recursiveInsertionSort([4, 1, 3, 9, 7], 0, 4));
   console.log(recursiveInsertionSort([10, 9, 8, 7, 6, 5, 4, 3, 2, 1], 0, 9));
   console.log(recursiveInsertionSort([1, 3, 2], 0, 2));
+
+  console.log("Quick sort | O(N log N)");
+  console.log(quickSort([4, 1, 3, 9, 7], 0, 4));
+  console.log(quickSort([10, 9, 8, 7, 6, 5, 4, 3, 2, 1], 0, 9));
+  console.log(quickSort([1, 3, 2], 0, 2));
 }
 
 main();
