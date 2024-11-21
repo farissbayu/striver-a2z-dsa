@@ -13,6 +13,7 @@ function largestElement(arr) {
   return max;
 }
 
+// Optimal solution
 function secondSmallestLargest(arr) {
   let smallest = arr[0];
   let largest = arr[0];
@@ -41,6 +42,17 @@ function secondSmallestLargest(arr) {
   return [secondSmallest, secondLargest];
 }
 
+// Optimal solution
+function checkIfSorted(arr) {
+  let isSorted = true;
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] > arr[i + 1]) {
+      isSorted = false;
+    }
+  }
+  return isSorted;
+}
+
 function main() {
   console.log("- Array Problem Easy -\n");
 
@@ -60,6 +72,12 @@ function main() {
   console.log("Array: ", [1, 1]);
   console.log("Second smallest: ", secondSmallestLargest([1, 1])[0]);
   console.log("Second largest: ", secondSmallestLargest([1, 1])[1]);
+
+  console.log("Check if array is sorted");
+  console.log("Array: ", [1, 2, 3, 4, 5]);
+  console.log("Array is sorted: ", checkIfSorted([1, 2, 3, 4, 5]));
+  console.log("Array: ", [5, 4, 6, 7, 8]);
+  console.log("Array is sorted: ", checkIfSorted([5, 4, 6, 7, 8]));
 }
 
 main();
