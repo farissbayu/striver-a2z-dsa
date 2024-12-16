@@ -1,6 +1,6 @@
-import { sort } from "./sort.js";
-
 // GeekForGeeks: Second Largest
+
+import { sort } from "./sort.js";
 /**
  * Brute force solution
  * 1. Sort the array (merge sort or quick sort)

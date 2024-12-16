@@ -53,6 +53,32 @@ function checkIfSorted(arr) {
   return isSorted;
 }
 
+// Brute force solution
+function removeDuplicates(nums) {
+  let cur = nums[0];
+  let i = 1;
+
+  while (i < nums.length) {
+    if (nums[i] === cur) {
+      nums.splice(i, 1);
+    } else {
+      cur = nums[i];
+      i++;
+    }
+  }
+
+  return nums;
+}
+
+function leftRotateArrayByOne(arr) {
+  const temp = arr[0];
+  for (let i = 1; i < arr.length; i++) {
+    arr[i - 1] = arr[i];
+  }
+  arr[arr.length - 1] = temp;
+  return arr;
+}
+
 function main() {
   console.log("- Array Problem Easy -\n");
 
@@ -62,22 +88,58 @@ function main() {
   console.log("Array: ", [8, 10, 5, 7, 9]);
   console.log("Max: ", largestElement([8, 10, 5, 7, 9]));
 
-  console.log("Second smallest and second largest element in array");
+  console.log("\nSecond smallest and second largest element in array");
   console.log("Array: ", [1, 2, 4, 7, 7, 5]);
   console.log(
     "Second smallest: ",
     secondSmallestLargest([1, 2, 4, 7, 7, 5])[0]
   );
-  console.log("Second largest: ", secondSmallestLargest([1, 2, 4, 7, 7, 5])[1]);
+  console.log(
+    "\nSecond largest: ",
+    secondSmallestLargest([1, 2, 4, 7, 7, 5])[1]
+  );
   console.log("Array: ", [1, 1]);
   console.log("Second smallest: ", secondSmallestLargest([1, 1])[0]);
   console.log("Second largest: ", secondSmallestLargest([1, 1])[1]);
 
-  console.log("Check if array is sorted");
+  console.log("\nCheck if array is sorted");
   console.log("Array: ", [1, 2, 3, 4, 5]);
   console.log("Array is sorted: ", checkIfSorted([1, 2, 3, 4, 5]));
   console.log("Array: ", [5, 4, 6, 7, 8]);
   console.log("Array is sorted: ", checkIfSorted([5, 4, 6, 7, 8]));
+
+  console.log("\nRemove duplicates from sorted array");
+  console.log("Array: ", [1, 1, 2, 2, 2, 3, 3]);
+  console.log("Removed duplicates: ", removeDuplicates([1, 1, 2, 2, 2, 3, 3]));
+  console.log("Array: ", [1, 1, 1, 2, 2, 3, 3, 3, 3, 4, 4]);
+  console.log(
+    "Removed duplicates: ",
+    removeDuplicates([1, 1, 1, 2, 2, 3, 3, 3, 3, 4, 4])
+  );
+
+  console.log("\nLeft rotate the array by one");
+  console.log("Array: ", [1, 2, 3, 4, 5]);
+  console.log(
+    "Array after rotated by one: ",
+    leftRotateArrayByOne([1, 2, 3, 4, 5])
+  );
+  console.log("Array: ", [5, 4, 6, 7, 8]);
+  console.log(
+    "Array after rotated by one: ",
+    leftRotateArrayByOne([5, 4, 6, 7, 8])
+  );
+
+  console.log("\nLeft rotate the array by d");
+  console.log("Array: ", [1, 2, 3, 4, 5]);
+  console.log(
+    "Array after rotated by d: ",
+    leftRotateArrayByOne([1, 2, 3, 4, 5])
+  );
+  console.log("Array: ", [5, 4, 6, 7, 8]);
+  console.log(
+    "Array after rotated by d: ",
+    leftRotateArrayByOne([5, 4, 6, 7, 8])
+  );
 }
 
 main();
