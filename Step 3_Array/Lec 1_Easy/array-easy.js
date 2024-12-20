@@ -186,6 +186,33 @@ function findMissingArray(arr, n) {
   return total - arrTotal;
 }
 
+function maximumConsecutiveOnes(arr) {
+  let counter = 0;
+  let max = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === 1) {
+      counter++;
+      if (max < counter) {
+        max = counter;
+      }
+    } else {
+      counter = 0;
+    }
+  }
+  return max;
+}
+
+function findTheNumberThatAppearsOnce(arr) {
+  let i = 0;
+  const counter = {};
+  while (i < arr.length) {
+    counter[arr[i]] = counter[arr[i]] ? counter[arr[i]] + 1 : 1;
+    i++;
+  }
+
+  return Number(Object.keys(counter).find((key) => counter[key] === 1));
+}
+
 function main() {
   console.log("- Array Problem Easy -");
   console.log();
@@ -287,6 +314,29 @@ function main() {
   console.log("Missing number: ", findMissingArray([1, 2, 4, 5], 5));
   console.log("Array:", [1, 3], "N:", 3);
   console.log("Missing number: ", findMissingArray([1, 3], 3));
+  console.log();
+
+  console.log("Maximum consecutive ones in an array");
+  console.log("Array:", [1, 1, 0, 1, 1, 1]);
+  console.log(
+    "Maximum consecutive ones: ",
+    maximumConsecutiveOnes([1, 1, 0, 1, 1, 1])
+  );
+  console.log("Array:", [1, 0, 1, 1, 0, 1]);
+  console.log("Missing number: ", maximumConsecutiveOnes([1, 0, 1, 1, 0, 1]));
+  console.log();
+
+  console.log("Find the number that appears once in an array");
+  console.log("Array:", [2, 2, 1]);
+  console.log(
+    "Number that appears once: ",
+    findTheNumberThatAppearsOnce([2, 2, 1])
+  );
+  console.log("Array:", [4, 1, 2, 1, 2]);
+  console.log(
+    "Number that appears once: ",
+    findTheNumberThatAppearsOnce([4, 1, 2, 1, 2])
+  );
   console.log();
 }
 
