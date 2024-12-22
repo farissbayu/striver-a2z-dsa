@@ -213,6 +213,32 @@ function findTheNumberThatAppearsOnce(arr) {
   return Number(Object.keys(counter).find((key) => counter[key] === 1));
 }
 
+function longestSubarrayWithK(arr, k) {
+  let sum = 0;
+  let maxLen = 0;
+  let prefixSumMap = new Map();
+
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+
+    if (sum === k) {
+      maxLen = i + 1;
+    }
+
+    const remaining = sum - k;
+    if (prefixSumMap.has(remaining)) {
+      const len = i - prefixSumMap.get(remaining);
+      maxLen = Math.max(maxLen, len);
+    }
+
+    if (!prefixSumMap.has(sum)) {
+      prefixSumMap.set(sum, i);
+    }
+  }
+
+  return maxLen;
+}
+
 function main() {
   console.log("- Array Problem Easy -");
   console.log();
@@ -336,6 +362,19 @@ function main() {
   console.log(
     "Number that appears once: ",
     findTheNumberThatAppearsOnce([4, 1, 2, 1, 2])
+  );
+  console.log();
+
+  console.log("Longest subarray with sum K");
+  console.log("Array:", [1, 2, 3, 1, 1, 1, 1], "K:", 3);
+  console.log(
+    "Length of longest subarray: ",
+    longestSubarrayWithK([1, 2, 3, 1, 1, 1, 1], 3)
+  );
+  console.log("Array:", [2, 3, 5, 1, 9], "K:", 10);
+  console.log(
+    "Length of longest subarray: ",
+    longestSubarrayWithK([2, 3, 5, 1, 9], 10)
   );
   console.log();
 }
