@@ -11,7 +11,7 @@
  * Time complexity: O(n^2)
  * Space complexity: O(1)
  */
-function twoSumBruteForce(arr, k) {
+function twoSumBruteForce(arr: number[], k: number): number[] {
   for (let i = 0; i < arr.length - 1; i++) {
     for (let j = i + 1; j < arr.length; j++) {
       if (arr[i] + arr[j] === k) {
@@ -25,37 +25,37 @@ function twoSumBruteForce(arr, k) {
 
 console.log("Brute force solution");
 
-let array = [2, 7, 11, 15];
-let k = 9;
+let array1: number[] = [2, 7, 11, 15];
+let k: number = 9;
 console.log(
   "Array:",
-  array,
+  array1,
   "| Target sum:",
   k,
   "| Indices:",
-  twoSumBruteForce(array, k)
+  twoSumBruteForce(array1, k)
 );
 
-array = [3, 2, 4];
+array1 = [3, 2, 4];
 k = 6;
 console.log(
   "Array:",
-  array,
+  array1,
   "| Target sum:",
   k,
   "| Indices:",
-  twoSumBruteForce(array, k)
+  twoSumBruteForce(array1, k)
 );
 
-array = [3, 3];
+array1 = [3, 3];
 k = 6;
 console.log(
   "Array:",
-  array,
+  array1,
   "| Target sum:",
   k,
   "| Indices:",
-  twoSumBruteForce(array, k)
+  twoSumBruteForce(array1, k)
 );
 
 console.log();
@@ -75,7 +75,7 @@ console.log();
  * Space complexity: O(n) | Linear space
  */
 
-function twoSumHashmap(arr, k) {
+function twoSumHashmap(arr: number[], k: number): number[] {
   const hashmap = new Map();
 
   for (let i = 0; i < arr.length; i++) {
@@ -91,37 +91,37 @@ function twoSumHashmap(arr, k) {
 
 console.log("Hashmap solution");
 
-array = [2, 7, 11, 15];
+array1 = [2, 7, 11, 15];
 k = 9;
 console.log(
   "Array:",
-  array,
+  array1,
   "| Target sum:",
   k,
   "| Indices:",
-  twoSumHashmap(array, k)
+  twoSumHashmap(array1, k)
 );
 
-array = [3, 2, 4];
+array1 = [3, 2, 4];
 k = 6;
 console.log(
   "Array:",
-  array,
+  array1,
   "| Target sum:",
   k,
   "| Indices:",
-  twoSumHashmap(array, k)
+  twoSumHashmap(array1, k)
 );
 
-array = [3, 3];
+array1 = [3, 3];
 k = 6;
 console.log(
   "Array:",
-  array,
+  array1,
   "| Target sum:",
   k,
   "| Indices:",
-  twoSumHashmap(array, k)
+  twoSumHashmap(array1, k)
 );
 
 console.log();
@@ -140,7 +140,7 @@ console.log();
  * Time complexity: O(nlogn) due to sorting
  * Space complexity: O(n) due to creating sorted array
  */
-function twoSumOptimal(arr, k) {
+function twoSumOptimal(arr: number[], k: number): number[] {
   let left = 0;
   let right = arr.length - 1;
   let sortedArr = arr.slice().sort((a, b) => a - b);
@@ -163,36 +163,35 @@ function twoSumOptimal(arr, k) {
 }
 
 console.log("Optimal solution");
-
-array = [2, 7, 11, 15];
+array1 = [2, 7, 11, 15];
 k = 9;
 console.log(
   "Array:",
-  array,
+  array1,
   "| Target sum:",
   k,
   "| Indices:",
-  twoSumOptimal(array, k)
+  twoSumOptimal(array1, k)
 );
 
-array = [3, 2, 4];
+array1 = [3, 2, 4];
 k = 6;
 console.log(
   "Array:",
-  array,
+  array1,
   "| Target sum:",
   k,
   "| Indices:",
-  twoSumOptimal(array, k)
+  twoSumOptimal(array1, k)
 );
 
-array = [3, 3];
+array1 = [3, 3];
 k = 6;
 console.log(
   "Array:",
-  array,
+  array1,
   "| Target sum:",
   k,
   "| Indices:",
-  twoSumOptimal(array, k)
+  twoSumOptimal(array1, k)
 );

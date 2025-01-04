@@ -19,7 +19,7 @@
  * Time complexity: O(n^2)
  * Space complexity: O(1)
  */
-function sortColorsBruteForce(arr) {
+function sortColorsBruteForce(arr: number[]) {
   for (let i = 0; i < arr.length; i++) {
     for (let j = 0; j < arr.length - i - 1; j++) {
       if (arr[j] > arr[j + 1]) {
@@ -33,11 +33,11 @@ function sortColorsBruteForce(arr) {
 
 console.log("Brute force solution | Bubble sort");
 
-let array = [2, 0, 2, 1, 1, 0];
-console.log("Array:", array, "| Sorted array:", sortColorsBruteForce(array));
+let array2 = [2, 0, 2, 1, 1, 0];
+console.log("Array:", array2, "| Sorted array:", sortColorsBruteForce(array2));
 
-array = [2, 0, 1];
-console.log("Array:", array, "| Sorted array:", sortColorsBruteForce(array));
+array2 = [2, 0, 1];
+console.log("Array:", array2, "| Sorted array:", sortColorsBruteForce(array2));
 
 console.log();
 
@@ -52,7 +52,7 @@ console.log();
  * Time complexity: O(n)
  * Space complexity: O(1)
  */
-function sortColorsCountingSort(arr) {
+function sortColorsCountingSort(arr: number[]) {
   let countZero = 0;
   let countOne = 0;
   let countTwo = 0;
@@ -82,11 +82,21 @@ function sortColorsCountingSort(arr) {
 
 console.log("Better solution | Counting sort");
 
-array = [2, 0, 2, 1, 1, 0];
-console.log("Array:", array, "| Sorted array:", sortColorsCountingSort(array));
+array2 = [2, 0, 2, 1, 1, 0];
+console.log(
+  "Array:",
+  array2,
+  "| Sorted array:",
+  sortColorsCountingSort(array2)
+);
 
-array = [2, 0, 1];
-console.log("Array:", array, "| Sorted array:", sortColorsCountingSort(array));
+array2 = [2, 0, 1];
+console.log(
+  "Array:",
+  array2,
+  "| Sorted array:",
+  sortColorsCountingSort(array2)
+);
 
 console.log();
 
@@ -104,7 +114,7 @@ console.log();
  * Time complexity: O(n)
  * Space complexity: O(1)
  */
-function sortColorsDutchNationalFlag(arr) {
+function sortColorsDutchNationalFlag(arr: number[]) {
   const n = arr.length;
 
   let low = 0;
@@ -129,20 +139,20 @@ function sortColorsDutchNationalFlag(arr) {
 
 console.log("Optimal solution | Dutch National Flag Algorithm");
 
-array = [2, 0, 2, 1, 1, 0];
+array2 = [2, 0, 2, 1, 1, 0];
 console.log(
   "Array:",
-  array,
+  array2,
   "| Sorted array:",
-  sortColorsDutchNationalFlag(array)
+  sortColorsDutchNationalFlag(array2)
 );
 
-array = [2, 0, 1];
+array2 = [2, 0, 1];
 console.log(
   "Array:",
-  array,
+  array2,
   "| Sorted array:",
-  sortColorsDutchNationalFlag(array)
+  sortColorsDutchNationalFlag(array2)
 );
 
 console.log();
