@@ -13,9 +13,9 @@
  * Time complexity: O(n)
  * Space complexity: O(n)
  */
-function rearrangeArrayBySignBruteForce(arr) {
-  let positive = [];
-  let negative = [];
+function rearrangeArrayBySignBruteForce(arr: number[]): number[] {
+  let positive: number[] = [];
+  let negative: number[] = [];
   let n = arr.length;
 
   for (let i = 0; i < n; i++) {
@@ -38,19 +38,19 @@ function rearrangeArrayBySignBruteForce(arr) {
 }
 
 console.log("Brute force solution");
-let array = [3, 1, -2, -5, 2, -4];
+let array7 = [3, 1, -2, -5, 2, -4];
 console.log(
   "Array:",
-  array,
+  array7,
   "| Rearranged array by sign:",
-  rearrangeArrayBySignBruteForce(array)
+  rearrangeArrayBySignBruteForce(array7)
 );
-array = [-1, 1];
+array7 = [-1, 1];
 console.log(
   "Array:",
-  array,
+  array7,
   "| Rearranged array by sign:",
-  rearrangeArrayBySignBruteForce(array)
+  rearrangeArrayBySignBruteForce(array7)
 );
 console.log();
 
@@ -67,7 +67,7 @@ console.log();
  * Time complexity: O(n)
  * Space complexity: O(n)
  */
-function rearrangeArrayBySignOptimal(arr) {
+function rearrangeArrayBySignOptimal(arr: number[]): number[] {
   let n = arr.length;
 
   let posIndex = 0;
@@ -88,18 +88,18 @@ function rearrangeArrayBySignOptimal(arr) {
 }
 
 console.log("Optimal solution");
-array = [3, 1, -2, -5, 2, -4];
+array7 = [3, 1, -2, -5, 2, -4];
 console.log(
   "Array:",
-  array,
+  array7,
   "| Rearranged array by sign:",
-  rearrangeArrayBySignOptimal(array)
+  rearrangeArrayBySignOptimal(array7)
 );
-array = [-1, 1];
+array7 = [-1, 1];
 console.log(
   "Array:",
-  array,
+  array7,
   "| Rearranged array by sign:",
-  rearrangeArrayBySignOptimal(array)
+  rearrangeArrayBySignOptimal(array7)
 );
 console.log();

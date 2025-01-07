@@ -19,7 +19,7 @@
  * Time complexity: O(n^3)
  * Space complexity: O(1)
  */
-function maxScoreSubarrayMinimumBruteForce(arr) {
+function maxScoreSubarrayMinimumBruteForce(arr: number[]): number {
   let maxScore = Number.MIN_SAFE_INTEGER;
 
   for (let i = 0; i < arr.length; i++) {
@@ -45,19 +45,19 @@ function maxScoreSubarrayMinimumBruteForce(arr) {
 }
 
 console.log("Brute force solution");
-let array = [4, 3, 1, 5, 6];
+let array5 = [4, 3, 1, 5, 6];
 console.log(
   "Array:",
-  array,
+  array5,
   "| Maximum score:",
-  maxScoreSubarrayMinimumBruteForce(array)
+  maxScoreSubarrayMinimumBruteForce(array5)
 );
-array = [5, 2, 1];
+array5 = [5, 2, 1];
 console.log(
   "Array:",
-  array,
+  array5,
   "| Maximum score:",
-  maxScoreSubarrayMinimumBruteForce(array)
+  maxScoreSubarrayMinimumBruteForce(array5)
 );
 console.log();
 
@@ -83,7 +83,7 @@ console.log();
  * Time complexity: O(n^2)
  * Space complexity: O(1)
  */
-function maxScoreSubarrayMinimumBetter(arr) {
+function maxScoreSubarrayMinimumBetter(arr: number[]): number {
   let maxScore = Number.MIN_SAFE_INTEGER;
 
   for (let i = 0; i < arr.length; i++) {
@@ -108,19 +108,19 @@ function maxScoreSubarrayMinimumBetter(arr) {
 }
 
 console.log("Better solution");
-array = [4, 3, 1, 5, 6];
+array5 = [4, 3, 1, 5, 6];
 console.log(
   "Array:",
-  array,
+  array5,
   "| Maximum score:",
-  maxScoreSubarrayMinimumBetter(array)
+  maxScoreSubarrayMinimumBetter(array5)
 );
-array = [5, 2, 1];
+array5 = [5, 2, 1];
 console.log(
   "Array:",
-  array,
+  array5,
   "| Maximum score:",
-  maxScoreSubarrayMinimumBetter(array)
+  maxScoreSubarrayMinimumBetter(array5)
 );
 console.log();
 
@@ -136,7 +136,7 @@ console.log();
  * Time complexity: O(n)
  * Space complexity: O(1)
  */
-function maxScoreSubarrayMinimumBest(arr) {
+function maxScoreSubarrayMinimumBest(arr: number[]): number {
   let maxScore = Number.MIN_SAFE_INTEGER;
 
   for (let i = 0; i < arr.length - 1; i++) {
@@ -150,18 +150,18 @@ function maxScoreSubarrayMinimumBest(arr) {
 }
 
 console.log("Best solution");
-array = [4, 3, 1, 5, 6];
+array5 = [4, 3, 1, 5, 6];
 console.log(
   "Array:",
-  array,
+  array5,
   "| Maximum score:",
-  maxScoreSubarrayMinimumBest(array)
+  maxScoreSubarrayMinimumBest(array5)
 );
-array = [5, 2, 1];
+array5 = [5, 2, 1];
 console.log(
   "Array:",
-  array,
+  array5,
   "| Maximum score:",
-  maxScoreSubarrayMinimumBest(array)
+  maxScoreSubarrayMinimumBest(array5)
 );
 console.log();

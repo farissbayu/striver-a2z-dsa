@@ -52,20 +52,20 @@ function setMatrixZeroBruteForce(matrix: number[][]): number[][] {
 }
 
 console.log("Brute force solution");
-let matrix: number[][] = [
+let matrix1: number[][] = [
   [1, 1, 1],
   [1, 0, 1],
   [1, 1, 1],
 ];
-console.log("Matrix before: ", matrix);
-console.log("Matrix after: ", setMatrixZeroBruteForce(matrix));
-matrix = [
+console.log("Matrix before: ", matrix1);
+console.log("Matrix after: ", setMatrixZeroBruteForce(matrix1));
+matrix1 = [
   [0, 1, 2, 0],
   [3, 4, 5, 2],
   [1, 3, 1, 5],
 ];
-console.log("Matrix before: ", matrix);
-console.log("Matrix after: ", setMatrixZeroBruteForce(matrix));
+console.log("Matrix before: ", matrix1);
+console.log("Matrix after: ", setMatrixZeroBruteForce(matrix1));
 console.log();
 
 /**
@@ -112,18 +112,113 @@ function setMatrixZeroBetter(matrix: number[][]): number[][] {
 }
 
 console.log("Better solution");
-matrix = [
+matrix1 = [
   [1, 1, 1],
   [1, 0, 1],
   [1, 1, 1],
 ];
-console.log("Matrix before: ", matrix);
-console.log("Matrix after: ", setMatrixZeroBetter(matrix));
-matrix = [
+console.log("Matrix before: ", matrix1);
+console.log("Matrix after: ", setMatrixZeroBetter(matrix1));
+matrix1 = [
   [0, 1, 2, 0],
   [3, 4, 5, 2],
   [1, 3, 1, 5],
 ];
-console.log("Matrix before: ", matrix);
-console.log("Matrix after: ", setMatrixZeroBetter(matrix));
+console.log("Matrix before: ", matrix1);
+console.log("Matrix after: ", setMatrixZeroBetter(matrix1));
+console.log();
+
+/**
+ * Optimal solution
+ *
+ * 1. Use row[0] and col[0] as marker array
+ * 2. Loop through the matrix to find zeros
+ * 3. Mark the row and column with zeros
+ * 4. Loop through the matrix with size reduced by row[0] and col[0]
+ * 5. Set zeros in the matrix based on the marker array
+ * 6. Set zeros in the first row and column based on the marker array
+ * 7. Return matrix
+ *
+ * Time complexity: O(m * n)
+ * Space complexity: O(1)
+ */
+function setMatrixZeroOptimal(matrix: number[][]): number[][] {
+  let col0 = 1;
+
+  // Marking the row and column with zeros
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[0].length; j++) {
+      if (matrix[i][j] === 0) {
+        matrix[i][0] = 0; // Mark the column
+
+        if (j !== 0) {
+          matrix[0][j] = 0; // Mark the row
+        } else {
+          col0 = 0; // Mark the additional variable
+        }
+      }
+    }
+  }
+
+  /**
+   * Set zeros in the submatrix based on the marker array
+   */
+  // for (let i = matrix.length - 1; i >= 1; i--) {
+  //   for (let j = matrix[0].length - 1; j >= 1; j--) {
+  //     if (matrix[0][j] === 0 || matrix[i][0] === 0) {
+  //       matrix[i][j] = 0;
+  //     }
+  //   }
+  // }
+
+  for (let i = 1; i < matrix.length; i++) {
+    for (let j = 1; j < matrix[0].length; j++) {
+      if (matrix[i][j] !== 0) {
+        if (matrix[0][j] === 0 || matrix[i][0] === 0) {
+          matrix[i][j] = 0;
+        }
+      }
+    }
+  }
+
+  // Set zeros in the first row
+  if (matrix[0][0] === 0) {
+    for (let j = 0; j < matrix[0].length; j++) {
+      matrix[0][j] = 0;
+    }
+  }
+
+  // Set zeros in the first column
+  if (col0 === 0) {
+    for (let i = 0; i < matrix.length; i++) {
+      matrix[i][0] = 0;
+    }
+  }
+
+  return matrix;
+}
+
+console.log("Optimal solution");
+// matrix1 = [
+//   [1, 1, 1],
+//   [1, 0, 1],
+//   [1, 1, 1],
+// ];
+// console.log("Matrix before: ", matrix1);
+// console.log("Matrix after: ", setMatrixZeroOptimal(matrix1));
+// matrix1 = [
+//   [0, 1, 2, 0],
+//   [3, 4, 5, 2],
+//   [1, 3, 1, 5],
+// ];
+// console.log("Matrix before: ", matrix1);
+// console.log("Matrix after: ", setMatrixZeroOptimal(matrix1));
+matrix1 = [
+  [1, 2, 3, 4],
+  [5, 0, 7, 8],
+  [0, 10, 11, 12],
+  [13, 14, 15, 0],
+];
+console.log("Matrix before: ", matrix1);
+console.log("Matrix after: ", setMatrixZeroOptimal(matrix1));
 console.log();

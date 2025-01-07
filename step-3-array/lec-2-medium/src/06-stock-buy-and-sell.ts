@@ -11,7 +11,7 @@
  * Time complexity: O(n^2)
  * Space complexity: O(1)
  */
-function stockBuyAndSell(arr) {
+function stockBuyAndSell(arr: number[]): number {
   let maxProfit = 0;
   for (let i = 0; i < arr.length; i++) {
     for (let j = i + 1; j < arr.length; j++) {
@@ -25,10 +25,10 @@ function stockBuyAndSell(arr) {
 }
 
 console.log("Brute force solution");
-let array = [7, 1, 5, 3, 6, 4];
-console.log("Array:", array, "| Maximum profit:", stockBuyAndSell(array));
-array = [7, 6, 4, 3, 1];
-console.log("Array:", array, "| Maximum profit:", stockBuyAndSell(array));
+let array6 = [7, 1, 5, 3, 6, 4];
+console.log("Array:", array6, "| Maximum profit:", stockBuyAndSell(array6));
+array6 = [7, 6, 4, 3, 1];
+console.log("Array:", array6, "| Maximum profit:", stockBuyAndSell(array6));
 console.log();
 
 /**
@@ -42,7 +42,7 @@ console.log();
  * Time complexity: O(n)
  * Space complexity: O(1)
  */
-function stockBuyAndSellOptimal(arr) {
+function stockBuyAndSellOptimal(arr: number[]): number {
   let maxProfit = 0;
   let minPrice = Infinity;
 
@@ -62,18 +62,18 @@ function stockBuyAndSellOptimal(arr) {
 }
 
 console.log("Optimal solution");
-array = [7, 1, 5, 3, 6, 4];
+array6 = [7, 1, 5, 3, 6, 4];
 console.log(
   "Array:",
-  array,
+  array6,
   "| Maximum profit:",
-  stockBuyAndSellOptimal(array)
+  stockBuyAndSellOptimal(array6)
 );
-array = [7, 6, 4, 3, 1];
+array6 = [7, 6, 4, 3, 1];
 console.log(
   "Array:",
-  array,
+  array6,
   "| Maximum profit:",
-  stockBuyAndSellOptimal(array)
+  stockBuyAndSellOptimal(array6)
 );
 console.log();

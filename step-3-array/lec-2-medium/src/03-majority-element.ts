@@ -17,16 +17,13 @@
  * Time complexity: O(n^2)
  * Space complexity: O(1)
  */
-function majorityElementBruteForce(arr) {
+function majorityElementBruteForce(arr: number[]): number {
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === undefined) continue;
-
     let cnt = 1;
 
     for (let j = i + 1; j < arr.length; j++) {
       if (arr[i] === arr[j]) {
         cnt++;
-        arr[j] = undefined;
       }
     }
 
@@ -40,19 +37,19 @@ function majorityElementBruteForce(arr) {
 
 console.log("Brute force solution");
 
-let array = [3, 2, 3];
+let array3 = [3, 2, 3];
 console.log(
   "Array:",
-  array,
+  array3,
   "| Majority element:",
-  majorityElementBruteForce(array)
+  majorityElementBruteForce(array3)
 );
-array = [2, 2, 1, 1, 1, 2, 2];
+array3 = [2, 2, 1, 1, 1, 2, 2];
 console.log(
   "Array:",
-  array,
+  array3,
   "| Majority element:",
-  majorityElementBruteForce(array)
+  majorityElementBruteForce(array3)
 );
 
 console.log();
@@ -69,7 +66,7 @@ console.log();
  * Space complexity: O(n)
  */
 
-function majorityElementHashMap(arr) {
+function majorityElementHashMap(arr: number[]): number {
   let map = new Map();
 
   for (let i = 0; i < arr.length; i++) {
@@ -87,19 +84,19 @@ function majorityElementHashMap(arr) {
 
 console.log("Better solution");
 
-array = [3, 2, 3];
+array3 = [3, 2, 3];
 console.log(
   "Array:",
-  array,
+  array3,
   "| Majority element:",
-  majorityElementHashMap(array)
+  majorityElementHashMap(array3)
 );
-array = [2, 2, 1, 1, 1, 2, 2];
+array3 = [2, 2, 1, 1, 1, 2, 2];
 console.log(
   "Array:",
-  array,
+  array3,
   "| Majority element:",
-  majorityElementHashMap(array)
+  majorityElementHashMap(array3)
 );
 
 console.log();
@@ -118,9 +115,9 @@ console.log();
  * Time complexity: O(n)
  * Space complexity: O(1)
  */
-function majorityElementMooreVoting(arr) {
+function majorityElementMooreVoting(arr: number[]): number {
   let cnt = 0;
-  let candidate;
+  let candidate = 0;
 
   for (let i = 0; i < arr.length; i++) {
     if (cnt === 0) {
@@ -143,23 +140,25 @@ function majorityElementMooreVoting(arr) {
   if (count > Math.floor(arr.length / 2)) {
     return candidate;
   }
+
+  return -1;
 }
 
 console.log("Optimal solution | Boyer-Moore Voting Algorithm");
 
-array = [3, 2, 3];
+array3 = [3, 2, 3];
 console.log(
   "Array:",
-  array,
+  array3,
   "| Majority element:",
-  majorityElementMooreVoting(array)
+  majorityElementMooreVoting(array3)
 );
-array = [2, 2, 1, 1, 1, 2, 2];
+array3 = [2, 2, 1, 1, 1, 2, 2];
 console.log(
   "Array:",
-  array,
+  array3,
   "| Majority element:",
-  majorityElementMooreVoting(array)
+  majorityElementMooreVoting(array3)
 );
 
 console.log();
