@@ -136,7 +136,7 @@ console.log();
  * Time complexity: O(n)
  * Space complexity: O(1)
  */
-function maxScoreSubarrayMinimumBest(arr: number[]): number {
+function maxScoreSubarrayMinimumOptimal(arr: number[]): number {
   let maxScore = Number.MIN_SAFE_INTEGER;
 
   for (let i = 0; i < arr.length - 1; i++) {
@@ -149,19 +149,19 @@ function maxScoreSubarrayMinimumBest(arr: number[]): number {
   return maxScore;
 }
 
-console.log("Best solution");
+console.log("Optimal solution");
 array5 = [4, 3, 1, 5, 6];
 console.log(
   "Array:",
   array5,
   "| Maximum score:",
-  maxScoreSubarrayMinimumBest(array5)
+  maxScoreSubarrayMinimumOptimal(array5)
 );
 array5 = [5, 2, 1];
 console.log(
   "Array:",
   array5,
   "| Maximum score:",
-  maxScoreSubarrayMinimumBest(array5)
+  maxScoreSubarrayMinimumOptimal(array5)
 );
 console.log();

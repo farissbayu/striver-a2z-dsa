@@ -199,20 +199,20 @@ function setMatrixZeroOptimal(matrix: number[][]): number[][] {
 }
 
 console.log("Optimal solution");
-// matrix1 = [
-//   [1, 1, 1],
-//   [1, 0, 1],
-//   [1, 1, 1],
-// ];
-// console.log("Matrix before: ", matrix1);
-// console.log("Matrix after: ", setMatrixZeroOptimal(matrix1));
-// matrix1 = [
-//   [0, 1, 2, 0],
-//   [3, 4, 5, 2],
-//   [1, 3, 1, 5],
-// ];
-// console.log("Matrix before: ", matrix1);
-// console.log("Matrix after: ", setMatrixZeroOptimal(matrix1));
+matrix1 = [
+  [1, 1, 1],
+  [1, 0, 1],
+  [1, 1, 1],
+];
+console.log("Matrix before: ", matrix1);
+console.log("Matrix after: ", setMatrixZeroOptimal(matrix1));
+matrix1 = [
+  [0, 1, 2, 0],
+  [3, 4, 5, 2],
+  [1, 3, 1, 5],
+];
+console.log("Matrix before: ", matrix1);
+console.log("Matrix after: ", setMatrixZeroOptimal(matrix1));
 matrix1 = [
   [1, 2, 3, 4],
   [5, 0, 7, 8],
