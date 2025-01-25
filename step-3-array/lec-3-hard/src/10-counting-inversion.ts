@@ -73,10 +73,10 @@ console.log();
  */
 function countingInversionsOptimal(arr: number[]): number {
   const n = arr.length;
-  return mergeSort(arr, 0, n - 1);
+  return mergeSortA(arr, 0, n - 1);
 }
 
-function mergeSort(arr: number[], low: number, high: number): number {
+function mergeSortA(arr: number[], low: number, high: number): number {
   let cnt = 0;
   if (low >= high) {
     return cnt;
@@ -84,14 +84,14 @@ function mergeSort(arr: number[], low: number, high: number): number {
 
   let mid = Math.floor((low + high) / 2);
 
-  cnt += mergeSort(arr, low, mid); // left sub array
-  cnt += mergeSort(arr, mid + 1, high); // right sub array
-  cnt += merge(arr, low, mid, high); // do merge
+  cnt += mergeSortA(arr, low, mid); // left sub array
+  cnt += mergeSortA(arr, mid + 1, high); // right sub array
+  cnt += mergeA(arr, low, mid, high); // do merge
 
   return cnt;
 }
 
-function merge(arr: number[], low: number, mid: number, high: number): number {
+function mergeA(arr: number[], low: number, mid: number, high: number): number {
   let temp = [];
 
   let left = low; // pointer for left sub array
