@@ -145,8 +145,8 @@ function reversePairsOptimal(nums: number[]): number {
 }
 
 console.log("Optimal Solution | Merge Sort + Count");
-let arr12 = [1, 3, 2, 3, 1];
-console.log("Array:", arr12, "| Reverse pairs:", reversePairsOptimal(arr12));
-arr12 = [2, 4, 3, 5, 1];
-console.log("Array:", arr12, "| Reverse pairs:", reversePairsOptimal(arr12));
+arr11 = [1, 3, 2, 3, 1];
+console.log("Array:", arr11, "| Reverse pairs:", reversePairsOptimal(arr11));
+arr11 = [2, 4, 3, 5, 1];
+console.log("Array:", arr11, "| Reverse pairs:", reversePairsOptimal(arr11));
 console.log();
